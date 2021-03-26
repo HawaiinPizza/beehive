@@ -60,7 +60,7 @@ router.get("/getgroup", async(req,res)=>{
         return x[0]
     }))
     
-    console.log(users)
+    // console.log(users)
     res.status(200).send({groups:ret_group, users:users}) 
 })
 
@@ -112,7 +112,7 @@ router.post("/remove", async(req,res)=>{
     if(true){
 
         let _tmp = await GroupMember.destroy({where:{Group:req.body.id}})
-        console.log(_tmp)
+        // console.log(_tmp)
         
         let ret=await Groupp.destroy({where:{id:req.body.id}})
         if(ret==1)
@@ -180,14 +180,14 @@ router.post("/update", async(req,res)=>{
 
 router.post("/set_members", async(req,res)=>{
     const id = req.body.id
-    console.log(id, req.body.memberList)
+    // console.log(id, req.body.memberList)
     const memList = req.body.memberList.map(x=>{
         return {User:x.id, Group:id, Manager:false}
     })
     await GroupMember.destroy({where:{ Group: id}})
 
     await GroupMember.bulkCreate(memList);
-    console.log("NICE")
+    // console.log("NICE")
     res.sendStatus(200)
 
 
@@ -246,12 +246,13 @@ router.post("/rmmembers", async(req,res)=>{
  * @body {id:id of group, userid: id of the user,body:body of email, subject:subject of email}
  */
 router.post("/email", async(req, res)=>{
-        console.log(req.body)
+        // console.log(req.body)
     const query = await sequelize.query(`select users.email from users JOIN groupmembers ON groupmembers.User=users.id AND groupmembers.Group=${req.body.id};`)
     const emails = query[0].map(i=> i.email)
     lib.email(emails, req.body.subject, req.body.body)
-    console.log(emails)
+    // console.log(emails)
     res.sendStatus(200)
 
 })
+
 module.exports = router;

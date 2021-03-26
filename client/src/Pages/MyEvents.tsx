@@ -8,7 +8,7 @@ import EventMemberModal from "../Components/Events/EventMemberModal";
 import TransferManagerModal from "../Components/TransferManagerModal";
 import ConfirmationModal from "../Components/ConfirmationModal";
 import * as API from "../api/Event";
-import { store, redux_index, redux_members, redux_id } from "../store";
+import { store, redux_index, redux_members, redux_transfer } from "../store";
 
 interface MemberInfo {
   id: number;
@@ -31,6 +31,9 @@ async function reload(id: number) {
   const tmp = await API.getEventManager(id);
   const myevents = tmp["events"]
   const members = tmp["eventmembers"]
+  console.log("MY STUFF", id)
+  console.log(myevents, id)
+  console.log("THE MEMBERS", members)
 
   if (myevents === undefined) {
           return [];
@@ -150,7 +153,7 @@ function MyEvents(props: { id: any }) {
           description: events[index].description,
         });
     store.dispatch(redux_index(i));
-    store.dispatch(redux_id(events[index].id));
+    store.dispatch(redux_transfer(events[index].id));
   };
 
   const addEvent = async (

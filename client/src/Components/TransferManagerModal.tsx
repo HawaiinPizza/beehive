@@ -67,12 +67,14 @@ function TransferManagerModal({ showModal, setShowModal, reload, setReload, even
                           <button className="TransferManagerModal-SetManagerButton" onClick={() => {
                                   handleCancel()
                                   let id = store.getState().state.id
-                                  console.log(event)
-                                  EventAPI.Transfer(event, member.id,   id )
+                                  console.log(event, id, member.id)
+
+                                  EventAPI.Transfer(event, id,   member.id )
                                   .then(res=>{
+                                          console.log(res)
                                           setReload(!reload);  
                                   })
-                                  }}>
+                          }}>
                       Set As Manager
                     </button>
                   </div>

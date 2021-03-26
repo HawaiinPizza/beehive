@@ -7,7 +7,9 @@
 ** TODO Transfer manager event workign   
 ** TODO Convert rest to firebase   
 * Fix
-** TODO email groups
+** DONE email groups
+   CLOSED: [2021-03-26 Fri 15:41]
+   - State "DONE"       from "TODO"       [2021-03-26 Fri 15:41]
    - State "DONE"       from "TODO"       [2021-03-26 Fri 15:26]
 ** DONE email events
    CLOSED: [2021-03-26 Fri 15:29]
