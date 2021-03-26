@@ -42,10 +42,8 @@ router.get("/getall", async (req,res)=>{
  * @desc Create a new event
  false*/
 router.post("/new", (req,res)=>{
-    console.log('EVENT', req.body);
     Event.create({ Name: req.body.Name ,Description: req.body.Description ,Address: req.body.Address ,Time: req.body.Time })
         .then(ret =>   {
-            console.log(ret.dataValues);
             EventMember.create({ User: req.body.Manager ,Event: ret.dataValues.id ,Attended: false ,RSVP: false ,Manager:true })
                 .then(ret2 => {
                     res.status(200).send({Event:ret.dataValues, Member:ret2.dataValues})
@@ -134,13 +132,11 @@ router.post("/rsvp", async (req, res)=>{
     let entry= await EventMember.findOne({where:{Event:event, User:user}})
     if(entry === null){
         let result = await  EventMember.findOrCreate({defaults:{Event:event, User:user, RSVP:false, Attended:false, Manager:false}, where:{User:user, Event:event}} )
-        console.log(result)
 
     }
     else{
         // let result = await  EventMember.findOrCreate({defaults:{Event:event, User:user, RSVP:entry.dataValues.RSVP, Attended:false, Manager:false}, where:{User:user, Event:event}} )
         let result = await EventMember.update({ RSVP: Sequelize.literal('NOT RSVP') }, { where: { User:user, Event:event } });
-        console.log(result, entry, "MEME")
     }
     /*
      */
@@ -163,7 +159,6 @@ router.post("/transfer", async (req, res)=>{
     EventMember.update({Manager:false}, {where:{User:main, Event:event}})
         .then(ret =>{
             if(ret[0]===0){
-                console.log("Error: no events found");
                 res.sendStatus(404);
             }
             else{
@@ -192,11 +187,6 @@ router.post("/man", async (req, res)=>{
 events.id = eventmembers.Event where eventmembers.Manager=true and eventmembers.User=${id} ) as mang join eventmembers on eventmembers.Event = mang.id join users on eventmembers.User = users.id where eventmembers.Manager=false ;`)
         const myevents = await sequelize.query(`select events.* from events join eventmembers on eventmembers.User=${id} where eventmembers.Manager =true;`);
 
-        // console.log("+++++++++++++++++++++++++++++++++++")
-        // console.log(myevents[0])
-        // console.log("----------------------------------")
-        // console.log(myevents[0])
-        // console.log("+++++++++++++++++++++++++++++++++++")
         res.send({eventmembers:eventmembers[0], events:myevents[0]}).status(200)
 
     }
@@ -217,8 +207,10 @@ router.get("/leaderboard", async(req, res)=>{
  */
 router.post("/email", async(req,res)=>{
     const query = await sequelize.query(`select users.email from users JOIN eventmembers ON eventmembers.User=users.id AND eventmembers.Event=${req.body.id};`)
+    // console.log(req.body.id)
+    // console.log(query[0])
     const emails = query[0].map(i=> i.email)
-    lib.email(emails)
+    lib.email(emails, req.body.subject, req.body.body)
     res.sendStatus(200)
 
 })

@@ -117,6 +117,9 @@ async function update_points(_users:[any]){
         .then(res=>true)
         .catch(res=>false)
 }
+async function email(event:number, subject:string, body:string){
+        return await axiosPost("email", {id:event, subject:subject, body:body})
+}
 
 
 export {
@@ -134,5 +137,6 @@ export {
   get_members,
     checkRSVP,
     update_points
+    ,email
 }
 // module.exports= { login,new_user,reset_password, reset_token}

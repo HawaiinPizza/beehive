@@ -44,6 +44,7 @@ async function removemembers(userid:number, groupid:number, memberid:number){
         return await axiosPost("rmmembers", {userid:userid, group:groupid ,member:memberid})
 }
 async function email(userid:number, groupid:number, subject:string, body:string){
+        console.log("WOW")
         return await axiosPost("email", {userid:userid, id:groupid ,subject:subject, body:body})
 }
 

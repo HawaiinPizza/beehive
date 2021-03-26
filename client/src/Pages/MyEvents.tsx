@@ -2,13 +2,13 @@ import React from "react";
 import "../CSS/Events/MyEvents.css";
 import EventList from "../Components/Events/EventsList";
 import EventsForm from "../Components/Events/EventsForm";
-import EmailModal from "../Components/EmailModal";
+import EmailModal from "../Components/EmailEvent";
 import EventEdit from "../Components/Events/EventsEdit";
 import EventMemberModal from "../Components/Events/EventMemberModal";
 import TransferManagerModal from "../Components/TransferManagerModal";
 import ConfirmationModal from "../Components/ConfirmationModal";
 import * as API from "../api/Event";
-import { store, redux_index, redux_members } from "../store";
+import { store, redux_index, redux_members, redux_id } from "../store";
 
 interface MemberInfo {
   id: number;
@@ -150,6 +150,7 @@ function MyEvents(props: { id: any }) {
           description: events[index].description,
         });
     store.dispatch(redux_index(i));
+    store.dispatch(redux_id(events[index].id));
   };
 
   const addEvent = async (
