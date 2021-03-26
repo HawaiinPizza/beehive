@@ -8,7 +8,7 @@ import GroupsEdit from "../Components/Groups/GroupsEdit";
 import ConfirmationModal from "../Components/ConfirmationModal";
 import "../CSS/Groups/MyGroups.css";
 import * as API from "../api/Groups";
-import { store, redux_index, redux_rsvp } from "../store";
+import { store, redux_index, redux_rsvp, redux_id } from "../store";
 
 interface MemberInfo {
   username: string;
@@ -98,7 +98,7 @@ function MyGroups(props: { id: number }) {
     setGroupIndex(index);
     store.dispatch(redux_index(i));
     store.dispatch(redux_rsvp(groups[i].id));
-    // store.dispatch(redux_index(index))
+    store.dispatch(redux_id(groups[i].id))
     i === undefined ? resetGroupAndMemList() : setGroupAndMemList(index);
   };
 

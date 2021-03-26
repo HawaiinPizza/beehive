@@ -20,8 +20,9 @@ function EmailModal({ showModal, setShowModal }: IProps) {
      
     const  state = store.getState().state;
     const  id = state.id;
-    const  group_id = state.index
-    sendEmail(id, group_id, email.subject, email.body)
+    // const  group_id = state.index
+    // console.log(state)
+    sendEmail(id, email.subject, email.body)
     setEmail({ subject: "", body: "" });
   };
 
