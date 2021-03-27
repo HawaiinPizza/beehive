@@ -84,6 +84,7 @@ async function reload(id: number) {
                   })
           }
           console.log(events)
+          console.log(Object.values(events))
   return Object.values(events) as Array<EventInfo>;
   }
 }
@@ -187,7 +188,6 @@ function MyEvents(props: { id: any }) {
       id: _tmp.id,
       members: null,
     });
-    alert(_tmp.id)
     console.log(_tmp)
     setEvents(e);
     setEventIndex(events.length);
