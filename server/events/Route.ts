@@ -47,6 +47,7 @@ router.post("/new", (req,res)=>{
         .then(ret =>   {
             EventMember.create({ User: req.body.Manager ,Event: ret.dataValues.id ,Attended: false ,RSVP: false ,Manager:true })
                 .then(ret2 => {
+                        console.log(ret.dataValues)
                     res.status(200).send({Event:ret.dataValues, Member:ret2.dataValues})
                     
                 })
@@ -158,8 +159,12 @@ router.post("/transfer", async (req, res)=>{
     let event = req.body.Event;
     let main = req.body.Main
     console.log(user, event, main)
-    EventMember.update({Manager:false}, {where:{User:main, Event:event}}) .then(res=>{console.log(res)})
-    EventMember.update({Manager:true}, {where:{User:user, Event:event}}) .then(res=>{console.log(res)})
+    if(user===undefined){res.sendStatus(404); return}
+    if(event===undefined){res.sendStatus(404); return}
+    if(main===undefined){res.sendStatus(404); return}
+    EventMember.update({User:user}, {where:{User:main, Event:event}}) .then(res=>{console.log(res)})
+    EventMember.destroy({where:{User:user, Event:event}})
+    // EventMember.update({User:user}, {where:{User:main, Event:event, RSVP:false, Invited:false}}) .then(res=>{console.log(res)})
     res.sendStatus(200)
 })
 

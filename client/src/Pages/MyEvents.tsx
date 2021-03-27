@@ -31,9 +31,9 @@ async function reload(id: number) {
   const tmp = await API.getEventManager(id);
   const myevents = tmp["events"]
   const members = tmp["eventmembers"]
-  console.log("MY STUFF", id)
-  console.log(myevents, id)
-  console.log("THE MEMBERS", members)
+  // console.log("MY STUFF", id)
+  // console.log(myevents, id)
+  // console.log("THE MEMBERS", members)
 
   if (myevents === undefined) {
           return [];
@@ -69,6 +69,7 @@ async function reload(id: number) {
                           // }),
                           id: _id,
                   };
+                  alert(_id)
                   events[i.id] = tmp_event;
 
           })
@@ -173,6 +174,9 @@ function MyEvents(props: { id: any }) {
       thedate,
       props.id
     );
+    console.log("BIG TAIL")
+    console.log(_tmp)
+    console.log("BIG TAIL")
     const e = events.slice();
     e.push({
       name,
@@ -183,6 +187,8 @@ function MyEvents(props: { id: any }) {
       id: _tmp.id,
       members: null,
     });
+    alert(_tmp.id)
+    console.log(_tmp)
     setEvents(e);
     setEventIndex(events.length);
     setCurEvent({

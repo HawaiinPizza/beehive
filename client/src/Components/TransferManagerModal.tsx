@@ -71,7 +71,7 @@ function TransferManagerModal({ showModal, setShowModal, reload, setReload, even
 
                                   EventAPI.Transfer(event, id,   member.id )
                                   .then(res=>{
-                                          console.log(res)
+                                          setReload(!reload);  
                                           setReload(!reload);  
                                   })
                           }}>
