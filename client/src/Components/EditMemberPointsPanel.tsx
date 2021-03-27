@@ -7,6 +7,7 @@ interface MemberInfo {
   firstname: string;
   lastname: string;
   points: number;
+  attended: boolean
 }
 
 interface IProps {

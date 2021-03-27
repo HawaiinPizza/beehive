@@ -9,6 +9,7 @@ interface MemberInfo {
   firstname: string;
   lastname: string;
   points: number;
+  attended: boolean
 }
 
 interface IProps {
@@ -25,18 +26,18 @@ function EventMemberModal({ showModal, setShowModal, members }: IProps) {
     lastname: "",
     id: -1,
     points: 0,
+    attended:true
   });
   if (members! !== null) {
     var _members = (members as unknown) as MemberInfo[];
     sortedList = _members.sort((a, b) => (a.points < b.points ? 1 : -1));
   }
 
-  const [hasAttended, setHasAttended] = React.useState(false);
   const [reload, setReload] = React.useState(false);
 
-  const setAttended = () => {
-    setHasAttended(!hasAttended);
-  };
+  // const setattended = () => {
+  //   setHasattended(!hasAttended);
+  // };
 
   const handleSave = () => {
           update_points(members as any)
@@ -77,8 +78,9 @@ function EventMemberModal({ showModal, setShowModal, members }: IProps) {
                     <form className="EventMemberModal-Attended">
                       <input
                         type="checkbox"
-                        defaultChecked={false}
-                        onChange={setAttended}
+                        // value={member.attended}
+                        defaultChecked={member.attended}
+                              onChange={()=>{member.attended=!member.attended}}
                       />
                     </form>
                     <div className="EventMemberModal-Points">

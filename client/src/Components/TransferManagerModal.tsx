@@ -9,6 +9,7 @@ interface MemberInfo {
   firstname: string;
   lastname: string;
   points: number;
+  attended: boolean;
 }
 
 interface IProps {
@@ -21,7 +22,7 @@ interface IProps {
 
 function TransferManagerModal({ showModal, setShowModal, reload, setReload, event }: IProps) {
   const fakeMembers = Array<MemberInfo>(
-    { id: -1, firstname: "", lastname: "", points: 0 },
+          { id: -1, firstname: "", lastname: "", points: 0, attended:false },
   );
 
   const [sortedList, setSortedList] = React.useState(

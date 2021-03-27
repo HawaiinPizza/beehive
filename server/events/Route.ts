@@ -175,17 +175,18 @@ router.post("/transfer", async (req, res)=>{
  */
 router.post("/man", async (req, res)=>{
     let id = req.body.id
+    console.log("WOW")
     if(id===undefined){
         res.sendStatus(404)
     }
     else{
-        const eventmembers = await sequelize.query(`select mang.id, mang.Name, mang.Description, mang.Address, mang.Time, users.firstname, users.lastname,  users.id as userid, users.points  from (select events.*  from eventmembers join events on
+        const eventmembers = await sequelize.query(`select mang.id, mang.Name, mang.Description, mang.Address, mang.Time, users.firstname, users.lastname, eventmembers.Attended as attended,  users.id as userid, users.points  from (select events.*  from eventmembers join events on
 events.id = eventmembers.Event where eventmembers.Manager=true and eventmembers.User=${id} ) as mang join eventmembers on eventmembers.Event = mang.id join users on eventmembers.User = users.id where eventmembers.Manager=false ;`)
         // const myevents = await sequelize.query(`select events.* from events join eventmembers on eventmembers.User=${id} where eventmembers.Manager =true;`);
         const myevents = await sequelize.query(`select events.* from eventmembers join events on eventmembers.Manager=true and eventmembers.Event = events.id and eventmembers.User=${id};`)
 
-        console.log(myevents[0])
-        // console.log(eventmembers[0])
+        // console.log(myevents[0])
+        console.log(eventmembers[0])
         res.send({eventmembers:eventmembers[0], events:myevents[0]}).status(200)
 
     }
@@ -228,8 +229,10 @@ router.post("/get_members", async (req, res)=>{
 
 router.post("/update-points", async(req,res)=>{
     let users=  req.body.users;
+        console.log(users)
+        console.log("MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
     users.forEach(user=>{
-        User.update({points: user.points}, {where:{id:user.id}});
+        User.update({points: user.points, Attended:user.attended}, {where:{id:user.id}});
     })
     res.sendStatus(200)
 })

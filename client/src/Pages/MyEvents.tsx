@@ -15,6 +15,7 @@ interface MemberInfo {
   firstname: string;
   lastname: string;
   points: number;
+  attended: boolean;
 }
 
 interface EventInfo {
@@ -75,10 +76,10 @@ async function reload(id: number) {
           if(members!==undefined){
                   members.forEach((i:any)=>{
                           if(events[i.id].members == null){
-                                  events[i.id].members= Array<MemberInfo>({ id: i.userid, firstname: i.firstname, lastname: i.lastname, points: i.points, })
+                                  events[i.id].members= Array<MemberInfo>({ id: i.userid, firstname: i.firstname, lastname: i.lastname, points: i.points, attended:i.attended})
                           }
                           else{
-                                  events[i.id].members.push({ id: i.userid, firstname: i.firstname, lastname: i.lastname, points: i.points, })
+                                  events[i.id].members.push({ id: i.userid, firstname: i.firstname, lastname: i.lastname, points: i.points, attended:i.attended})
                           }
                   })
           }

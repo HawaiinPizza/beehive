@@ -177,7 +177,7 @@ insert into eventmembers(user, event, attended, rsvp, manager, createdAt, update
 1, 1, true, true, false,
 "2020-08-4", "2019-4-3");
 insert into eventmembers(user, event, attended, rsvp, manager, createdAt, updatedAt) values (
-3, 1, true, false, false,
+3, 1, false, false, false,
 "2020-08-4", "2019-4-3");
 insert into eventmembers(user, event, attended, rsvp, manager, createdAt, updatedAt) values (
 4, 1, true, true, false,
@@ -190,13 +190,13 @@ insert into eventmembers(user, event, attended, rsvp, manager, createdAt, update
 
 
 insert into eventmembers(user, event, attended, rsvp, manager, createdAt, updatedAt) values (
-2, 1, true, false, true,
+2, 1, false, false, true,
 "2020-08-4", "2019-4-3");
 insert into eventmembers(user, event, attended, rsvp, manager, createdAt, updatedAt) values (
 3, 2, true, false, false,
 "2020-08-4", "2019-4-3");
 insert into eventmembers(user, event, attended, rsvp, manager, createdAt, updatedAt) values (
-3, 3, true, false, false,
+3, 3, false, false, false,
 "2020-08-4", "2019-4-3");
 insert into eventmembers(user, event, attended, rsvp, manager, createdAt, updatedAt) values (
 3, 4, true, false, false,

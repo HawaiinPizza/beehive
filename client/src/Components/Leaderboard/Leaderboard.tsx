@@ -8,11 +8,12 @@ interface MemberInfo {
   firstname: string;
   lastname: string;
   points: number;
+  attended: boolean;
 }
 
 function Leaderboard() {
   const [allMembers, setMembers] = React.useState(Array<MemberInfo>(
-    { id: 0, firstname: "default", lastname: "default", points: 0 },
+          { id: 0, firstname: "default", lastname: "default", points: 0, attended:false },
   ));
 
 
