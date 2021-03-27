@@ -69,7 +69,6 @@ async function reload(id: number) {
                           // }),
                           id: _id,
                   };
-                  alert(_id)
                   events[i.id] = tmp_event;
 
           })
