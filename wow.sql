@@ -1,92 +1,64 @@
 -- to generate user
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Hampton", "Jackle",
-"owner", "pass", "graphinetime@gmail.com",
-8, 1, "2020-08-4", "2020-08-3");
+"Monier", "Abdullah",
+"Monier", "pass", "graphinetime@gmail.com",
+104, 1, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Grogron", "Starswift",
-"member", "pass", "ahmedzakariya355@gmail.com",
-16, 0, "2020-08-4", "2020-08-3");
+"Zakariya", "Ahmed",
+"Zakariya", "pass", "ahmedzakariya355@gmail.com",
+103, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Gradir", "Nen", 
-"John", "pass", "omunam10@gmail.com",
-22, 0, "2020-08-4", "2020-08-3");
+"Kevin", "Longworth", 
+"Kevin", "pass", "omunam10@gmail.com",
+102, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Khurer", "Pahled", 
-"Alice", "pass", "muazalhaidar@gmail.com",
-45, 0, "2020-08-4", "2020-08-3");
+"Muaz", "Alhaidar", 
+"Muaz", "pass", "muazalhaidar@gmail.com",
+101, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Gunkodd", "Cragflow",
+"Steve", "Cunningham",
 "Steve", "pass", "omunam10@gmail.com",
 23, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Trar", "Strongshadow",
+"Adrian", "Carter",
 "Adrian", "pass", "omunam10@gmail.com",
 95, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Reldoth", "Ravenstone",
+"Clyde", "Graves",
 "Clyde", "pass", "omunam10@gmail.com",
 75, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Lavaru", "Nupruzdihk",
+"Sylvia", "Tate",
 "Sylvia", "pass", "omunam10@gmail.com",
 64, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Thikan", "Lupvahk",
+"Pheobe", "Campbell",
 "Pheobe", "pass", "omunam10@gmail.com",
 92, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Low", "Wi",
-"Asmon", "pass", "omunam10@gmail.com",
+"Anaki", "Wi",
+"Anaki", "pass", "omunam10@gmail.com",
 33, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Femusmeh", "Jukei",
-"Kevin", "pass", "omunam10@gmail.com",
+"Andrew", "Marsh",
+"Andrew", "pass", "omunam10@gmail.com",
 51, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Setil", "Zemmin",
+"Shawn", "Carroll",
 "Shawn", "pass", "omunam10@gmail.com",
 66, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Jurrisro", "Stoneblaze",
+"Steven", "Perkins",
 "Steven", "pass", "omunam10@gmail.com",
-102, 0, "2020-08-4", "2020-08-3");
+99, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Shorve", "Oatkeep",
+"Eric", "Donnelly",
 "Eric", "pass", "omunam10@gmail.com",
 47, 0, "2020-08-4", "2020-08-3");
 insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Kitha", "Glon",
+"Cohh", "Vaughn",
 "Cohh", "pass", "omunam10@gmail.com",
 82, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Vithrafro", "Fallenspire",
-"Terry", "pass", "omunam10@gmail.com",
-61, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Algo", "Deadcut",
-"Johnathan", "pass", "omunam10@gmail.com",
-55, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Cuchothi", "Zithahkihr",
-"Greg", "pass", "omunam10@gmail.com",
-40, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Vamu", "Sankrald",
-"Skrall", "pass", "omunam10@gmail.com",
-77, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Farlurril", "Vradanuldye",
-"Yeqw", "pass", "omunam10@gmail.com",
-94, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Tefru", "Rakonga",
-"Brakkat", "pass", "omunam10@gmail.com",
-94, 0, "2020-08-4", "2020-08-3");
-insert into users(firstname, lastname, username, password, email, points, role_id, createdAt, updatedAt) values (
-"Jui", "Hiaoy",
-"Kit", "pass", "omunam10@gmail.com",
-23, 0, "2020-08-4", "2020-08-3");
 
 -- To generate an group
 -- insert into events  (Name, ContactInfo, createdAt, updatedAt) values ("Muaz's group", "kinda sus", "2020-08-4", "2020-8-1");
